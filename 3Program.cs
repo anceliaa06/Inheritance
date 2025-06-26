@@ -1,12 +1,29 @@
-﻿using System;
-
-class Program
+namespace AvoidMagicNumber
 {
-    static void Main()
+    internal class Program
     {
-        Console.Write("Enter a number: ");
-        int num = Convert.ToInt32(Console.ReadLine());
+        private const int EvenDivisor = 2; // Constant for checking evenness
+        private const int RemainderForEven = 0;  // Expected remainder for even numbers
 
-        Console.WriteLine(num % 2 == 0 ? "Even number" : "Odd number");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("ENTER A NUMBER:");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            // Call IsEven to check if the number is even
+            if (IsEven(number))
+            {
+                Console.WriteLine("The number is even.");
+            }
+            else
+            {
+                Console.WriteLine("The number is odd.");
+            }
+        }
+
+        private static bool IsEven(int number)
+        {
+            return number % EvenDivisor == RemainderForEven;
+        }
     }
 }
